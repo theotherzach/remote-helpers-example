@@ -1,0 +1,28 @@
+<h1>Items</h1>
+
+<h2>Items</h2>
+<div id="items">
+  <% @items.each do |item| %>
+    <h3><%= item.name %></h3>
+    <p><%= item.description %></p>
+  <% end %>
+</div>
+
+<h2>Add a new Item</h2>
+<%= form_with(model: @item) do |f| %>
+  <div>
+    <%= f.label :name %>
+  </div>
+  <div>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :description %>
+  </div>
+  <div>
+    <%= f.text_area :description, size: "60x12" %>
+  </div>
+  <div>
+    <%= f.submit "Add item" %>
+  </div>
+<% end %>
