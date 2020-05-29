@@ -1,0 +1,6 @@
+document.getElementById("items").append(
+  new DOMParser()
+  .parseFromString("<%= escape_javascript(render "item", item: @item) %>", 'text/html')
+  .body
+  .firstChild
+)

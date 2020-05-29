@@ -1,14 +1,13 @@
-<h1>Items</h1>
+<h1>Append To List Example</h1>
 
-<h2>Items</h2>
+<h2>Items List</h2>
+
 <div id="items">
-  <% @items.each do |item| %>
-    <h3><%= item.name %></h3>
-    <p><%= item.description %></p>
-  <% end %>
+  <%= render partial: "item", collection: @items %>
 </div>
 
 <h2>Add a new Item</h2>
+
 <%= form_with(model: @item) do |f| %>
   <div>
     <%= f.label :name %>
